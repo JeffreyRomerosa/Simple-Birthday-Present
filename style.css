@@ -1,0 +1,352 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to bottom, #ffe6e6, #f0e6ff);
+    color: #333;
+    line-height: 1.6;
+}
+
+.navbar {
+    background-color: rgba(255, 255, 255, 0.9);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.navbar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+.navbar li {
+    margin: 0 15px;
+}
+
+.navbar a {
+    color: #ff69b4;
+    text-decoration: none;
+    padding: 15px 10px;
+    display: inline-block;
+    transition: all 0.3s ease;
+    font-weight: 600;
+}
+
+.navbar a:hover, .navbar a.active {
+    color: #ff1493;
+    transform: translateY(-2px);
+}
+
+header {
+    text-align: center;
+    padding: 60px 20px;
+    background: linear-gradient(rgba(255,255,255,0.8), rgba(255,255,255,0.6)), url('src/background.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+h1 {
+    color: #ff1493;
+    font-size: 3.5em;
+    margin-bottom: 20px;
+    font-family: 'Dancing Script', cursive;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+}
+
+.profile-image-container {
+    position: relative;
+    display: inline-block;
+}
+
+.profile-image {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    border: 8px solid #ff69b4;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.profile-image:hover {
+    transform: scale(1.05) rotate(5deg);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+}
+
+.cake {
+    text-align: center;
+    margin: 60px 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.cake h2 {
+    color: #8a2be2;
+    margin-bottom: 30px;
+    font-size: 2.5em;
+    font-family: 'Dancing Script', cursive;
+}
+
+.cake-images {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    position: relative;
+    z-index: 2;
+}
+
+.cake-layer {
+    border: 3px solid #ff69b4;
+    border-radius: 10px;
+    width: 100px;
+    height: auto;
+    max-width: 90%;
+    transition: transform 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.cake-layer:hover {
+    transform: scale(1.1) rotate(5deg);
+}
+
+.layer-2, .layer-3 {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.candle-container {
+    position: relative;
+    height: 60px;
+    z-index: 3;
+}
+
+.candle {
+    width: 20px;
+    height: 60px;
+    background: linear-gradient(to bottom, #ffff00, #ffa500);
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 10px 10px 0 0;
+}
+
+.flame {
+    width: 20px;
+    height: 30px;
+    background: radial-gradient(#ffff00, #ff4500);
+    position: absolute;
+    top: -25px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 50% 50% 20% 20%;
+    animation: flicker 0.3s infinite alternate;
+}
+
+@keyframes flicker {
+    0% { transform: translateX(-50%) scale(1); opacity: 0.9; }
+    100% { transform: translateX(-50%) scale(1.2); opacity: 1; }
+}
+
+.ribbons {
+    position: absolute;
+    top: -50px;
+    left: 0;
+    right: 0;
+    height: 100%;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.ribbons::before,
+.ribbons::after {
+    content: '';
+    position: absolute;
+    width: 10px;
+    height: 30px;
+    background: #ff69b4;
+    top: -30px;
+    animation: fall 3s infinite linear;
+}
+
+.ribbons::before {
+    left: 10%;
+    animation-delay: 1s;
+}
+
+.ribbons::after {
+    right: 10%;
+    animation-delay: 2s;
+}
+
+@keyframes fall {
+    0% { transform: translateY(-100%) rotate(0deg); }
+    100% { transform: translateY(1000%) rotate(360deg); }
+}
+
+.about {
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 60px 20px;
+    margin: 40px 0;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.about h2 {
+    color: #ff1493;
+    margin-bottom: 30px;
+    text-align: center;
+    font-size: 2.5em;
+    font-family: 'Dancing Script', cursive;
+}
+
+.about-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.about-text {
+    flex: 1;
+    min-width: 300px;
+    margin-right: 40px;
+}
+
+.about-text p {
+    font-size: 1.1em;
+    line-height: 1.8;
+    margin-bottom: 20px;
+}
+
+.about-video {
+    flex: 0 0 auto;
+    width: 300px;
+    margin: 0 auto;
+}
+
+.about-video video {
+    width: 100%;
+    height: auto;
+    border: 5px solid #ff69b4;
+    border-radius: 20px;
+    box-shadow: 0 10px 20px rgba(255, 105, 180, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.about-video video:hover {
+    transform: scale(1.05);
+    box-shadow: 0 15px 30px rgba(255, 105, 180, 0.5);
+}
+
+.about-image {
+    flex: 0 0 auto;
+    width: 350px;
+    margin: 0 auto;
+}
+
+.about-us-image {
+    width: 100%;
+    height: auto;
+    border: 5px solid #ff69b4;
+    border-radius: 20px;
+    box-shadow: 0 10px 20px rgba(255, 105, 180, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.about-us-image:hover {
+    transform: scale(1.05) rotate(2deg);
+    box-shadow: 0 15px 30px rgba(255, 105, 180, 0.5);
+}
+
+.video-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    margin: 40px 0;
+}
+
+.memory-video {
+    width: 250px;
+    height: auto;
+    border: 5px  solid #ff69b4;
+    border-radius: 15px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.memory-video:hover {
+    transform: scale(1.05) rotate(2deg);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+}
+
+footer {
+    text-align: center;
+    padding: 40px 20px;
+    background-color: rgba(255, 255, 255, 0.9);
+    margin-top: 60px;
+}
+
+footer p {
+    margin: 10px 0;
+    font-size: 1.2em;
+}
+
+footer em {
+    color: #ff1493;
+    font-style: normal;
+    font-weight: bold;
+    font-family: 'Dancing Script', cursive;
+    font-size: 1.5em;
+}
+
+@media (max-width: 768px) {
+    .navbar ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .navbar li {
+        margin: 10px 0;
+    }
+
+    h1 {
+        font-size: 2.5em;
+    }
+
+    .profile-image {
+        width: 200px;
+        height: 200px;
+    }
+
+    .cake-layer {
+        width: 80px;
+    }
+
+    .memory-video {
+        width: 200px;
+    }
+
+    .about-content {
+        flex-direction: column;
+    }
+
+    .about-text {
+        margin-right: 0;
+        margin-bottom: 30px;
+    }
+
+    .about-video {
+        width: 250px;
+    }
+
+    .about-image {
+        width: 300px;
+    }
+}
